@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <img class="img-fluid" src="{{ car.image.url }}" alt="{{ car.model }}"  style="width: 1500px; ">
+                </div>
+                <div class="col-lg-6" style="width: 215px; height: 350px; border: 1px solid #000; margin: 5px;">
+                    <h1 class="display-4 text-uppercase mb-4">{{ car.model }}</h1>
+                    <p class="mb-4"><strong>Yili:</strong> {{ car.yil }}</p>
+                    <p class="mb-4"><strong>Rangi:</strong> {{ car.color }}</p>
+                    <p class="mb-4"><strong>Mashina Brendi:</strong> {{ car.brand }}</p>
+                    <p class="mb-4"><strong>Mashina Narxi:</strong> ${{ car.narxi }} per day</p>
+                    <a href="{% url 'main:car_list' %}" class="btn btn-primary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
